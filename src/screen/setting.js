@@ -9,15 +9,20 @@ import { connect } from 'react-redux'
 function AddFav( title, x ) {
   return (
     <View> 
-      <View style={styles.item}>
       <TouchableOpacity onPress={() => x.navigate('Detail', {
-              otherParam: 'anything you want here',
-            })}>
+          otherParam: 'anything you want here',
+      })}>
+      <View style={styles.item}>
+      <View>
         <View style={styles.room}>
         <Text>{title.name}</Text>
         </View>
-      </TouchableOpacity>
       </View>
+      <View style={styles.user}>
+        <Text>{title.name}</Text>
+      </View>
+      </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -41,7 +46,6 @@ class ForYou extends React.Component {
       <FlatList
         data={rooms}
         renderItem={({ item }) => AddFav(item , this.props.navigation)}
-        numColumns={3}
         keyExtractor={item => item.title}
       />
     </SafeAreaView>

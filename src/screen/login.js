@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, StatusBar } from 'react-native';
 import { Container, Input, Item, Button, Icon } from 'native-base';
 import * as actionAkun from '../redux/actions/actionAkun'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 
 class LoginScreen extends React.Component {
@@ -41,14 +41,11 @@ class LoginScreen extends React.Component {
 
   render() {
     console.disableYellowBox=true;
-
     return (
-
       <Container style={{backgroundColor:''}}>
         <View style={styles.content}>
           <View style={styles.title}>
             <Text style={styles.login}>Login</Text>
-            <Text>HappyWork</Text>
           </View>
           <View>
             <Text>Email</Text>
@@ -59,7 +56,7 @@ class LoginScreen extends React.Component {
             <Item rounded style={styles.input}>
               <Input secureTextEntry = { this.state.hidePassword } onChangeText={(text)=>{this.setState({passwordValue:text})}} value={this.state.passwordValue}/>
               <TouchableOpacity activeOpacity = { 0.8 }  onPress = { this.managePasswordVisibility }>
-              <Icon name = { ( this.state.hidePassword ) ? 'eye' : 'eye-off' } />
+              <Icon name = { ( this.state.hidePassword ) ? 'eye-off' : 'eye' } />
               </TouchableOpacity>
             </Item>
             <Button disabled={(this.state.emailValue && this.state.passwordValue)=='' ? true:false}
@@ -89,7 +86,7 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     borderRadius:10,
-    backgroundColor:'#f64747'   
+    backgroundColor:'#3fc380'   
   },
   buttonDisabled: {
     height: 50,

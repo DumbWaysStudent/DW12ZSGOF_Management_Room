@@ -37,7 +37,7 @@ class ForYou extends React.Component {
       <Content>
 
     <SafeAreaView>
-      <Header style={{alignItems:'center'}}><Text style={styles.header}>ROOM</Text></Header>
+      <Header style={{alignItems:'center', backgroundColor:'white'}}><Text style={styles.header}>ROOM</Text></Header>
       <FlatList
         data={rooms}
         renderItem={({ item }) => AddFav(item , this.props.navigation)}
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
     flexDirection:'row',
   },
   header: {
-    color:'white'
+    color:'#3fc380',
+    fontWeight:'bold'
   },
   room: {
     width: 112,

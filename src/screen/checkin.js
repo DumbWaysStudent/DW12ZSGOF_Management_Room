@@ -13,7 +13,7 @@ function AddFav( title, x ) {
       <TouchableOpacity onPress={() => x.navigate('Detail', {
               otherParam: 'anything you want here',
             })}>
-        <View style={styles.room}>
+        <View style={ ( title.id % 2 ) ? styles.room : [styles.room,{backgroundColor:'#bfbfbf'}] }>
         <Text>{title.name}</Text>
         </View>
       </TouchableOpacity>
@@ -37,7 +37,7 @@ class ForYou extends React.Component {
       <Content>
 
     <SafeAreaView>
-      <Header style={{alignItems:'center'}}><Text style={styles.header}>CHECKIN</Text></Header>
+      <Header style={{alignItems:'center', backgroundColor:'#03a678'}}><Text style={styles.header}>CHECKIN</Text></Header>
       <FlatList
         data={rooms}
         renderItem={({ item }) => AddFav(item , this.props.navigation)}

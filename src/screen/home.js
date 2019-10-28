@@ -53,7 +53,7 @@ export default createMaterialBottomTabNavigator(
     },
     {
       initialRouteName: 'Room',
-      activeColor: '#f64747',
+      activeColor: '#3fc380',
       inactiveColor: 'grey',
       barStyle: { backgroundColor: 'white' },
     }
