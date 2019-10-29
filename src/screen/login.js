@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, Image } from 'react-native';
 import { Container, Input, Item, Button, Icon } from 'native-base';
 import * as actionAkun from '../redux/actions/actionAkun'
 import { connect } from 'react-redux';
+
 
 
 class LoginScreen extends React.Component {
@@ -32,7 +33,7 @@ class LoginScreen extends React.Component {
   loginUser = async() => {
     const { emailValue, passwordValue } = this.state;
     await this.props.handleLogin(emailValue, passwordValue);
-    if (this.props.loginLocal.login.token != ''){
+    if (this.props.loginLocal.login.user.id !== null){
           this.props.navigation.navigate('Home');
     } else {
         Alert.alert('Incorrect', 'Email atau Password salah');
@@ -45,10 +46,12 @@ class LoginScreen extends React.Component {
       <Container style={{backgroundColor:''}}>
         <View style={styles.content}>
           <View style={styles.title}>
-            <Text style={styles.login}>Login</Text>
+          <Image
+            style={{width: 100,height: 100,}}
+              source={{ uri: 'https://i.ibb.co/fHTWCQ2/logo.png' }}/>
           </View>
           <View>
-            <Text>Email</Text>
+            <Text>Username</Text>
             <Item regular style={styles.input}>
               <Input autoCapitalize='none' keyboardType='email-address' onChangeText={(text)=>{this.setState({emailValue:text})}} value={this.state.emailValue}/>
             </Item>
@@ -92,7 +95,7 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     borderRadius:10,
-    backgroundColor:'grey'   
+    backgroundColor:'#3fc380'   
   },
   title: {
     alignItems: 'center',

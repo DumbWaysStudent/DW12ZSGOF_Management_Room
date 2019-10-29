@@ -1,13 +1,13 @@
 import * as types from './../types'
 import axios from 'axios'
 
-export const handleLogin = (email, password) => ({
+export const handleLogin = (username, password) => ({
     type: types.LOGIN,
     payload: axios({
       method: 'POST',
-      url: `https://fourtoon-api.herokuapp.com/api/v1//login`,
+      url: `http://192.168.0.45:9876/api/v2/login`,
       data: {
-        email,
+        username,
         password,
       },
     }),

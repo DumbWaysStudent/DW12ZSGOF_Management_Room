@@ -26,10 +26,20 @@ export default createMaterialBottomTabNavigator(
           tabBarLabel:'Room',  
           tabBarIcon: ({ tintColor }) => (  
               <View>  
-                  <Icon style={[{color: tintColor}]} size={10} name={'md-home'}/>  
+                  <Icon style={[{color: tintColor}]} size={20} name={'md-home'}/>  
               </View>) 
         }  
       },
+      // Add : {
+      //   screen : Add,
+      //   navigationOptions:{  
+      //     tabBarLabel:'Add Room',  
+      //     tabBarIcon: ({ tintColor }) => (  
+      //         <View>  
+      //             <Icon style={[{color: tintColor,}]} size={20} name={'md-add-circle'}/>  
+      //         </View>) 
+      //   }  
+      // },
       Customer : {
         screen : Customer,
         navigationOptions:{  
@@ -48,7 +58,7 @@ export default createMaterialBottomTabNavigator(
               <View>  
                   <Icon style={[{color: tintColor}]} size={10} name={'md-settings'}/>  
               </View>) 
-        }  
+        } 
       }
     },
     {

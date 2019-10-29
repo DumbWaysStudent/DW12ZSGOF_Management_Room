@@ -22,8 +22,8 @@ function AddFav( title, x ) {
   );
 }
 
+
 class ForYou extends React.Component {
- 
 
  async componentDidMount(){
  await this.props.handleGetRooms()

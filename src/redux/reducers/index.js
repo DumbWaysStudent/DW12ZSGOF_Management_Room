@@ -11,6 +11,8 @@ import reducerUpdateWebtoon from '../reducers/reducerUpdateWebtoon'
 import reducerLogin from '../reducers/reducerLogin'
 import reducerRooms from '../reducers/reducerRooms';
 import reducerCustomers from '../reducers/reducerCustomers';
+import reducerAddRoom from '../reducers/reducerAddRoom'
+import reducerAddCustomer from '../reducers/reducerAddCustomer'
 
 
 
@@ -25,7 +27,9 @@ const appReducer = combineReducers({
   updateWebtoon: reducerUpdateWebtoon,
   login:reducerLogin,
   rooms: reducerRooms,
-  customers: reducerCustomers
+  customers: reducerCustomers,
+  addRoom : reducerAddRoom,
+  addCustomer : reducerAddCustomer
 })
 
 export default appReducer
