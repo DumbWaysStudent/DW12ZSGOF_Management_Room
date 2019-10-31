@@ -13,8 +13,9 @@ function AddFav( title, x ) {
       <TouchableOpacity onPress={() => x.navigate('Detail', {
               otherParam: 'anything you want here',
             })}>
-        <View style={ ( title.id % 2 ) ? styles.room : [styles.room,{backgroundColor:'#bfbfbf'}] }>
+        <View style={ ( title.order[0]  ) ? [styles.room,{backgroundColor:'#bfbfbf'}] : styles.room }>
         <Text>{title.name}</Text>
+        <Text>{(title.order[0]) ? 'Sedang Digunakan'  : 'Tersedia' }</Text>
         </View>
       </TouchableOpacity>
       </View>
@@ -26,11 +27,11 @@ function AddFav( title, x ) {
 class ForYou extends React.Component {
 
  async componentDidMount(){
- await this.props.handleGetRooms()
+ await this.props.handleCheckin()
   }
 
   render() {
-    const rooms=this.props.roomsLocal.rooms
+    const checkin=this.props.checkinLocal.checkin
     console.disableYellowBox=true;
     return (
       <Container>
@@ -39,7 +40,7 @@ class ForYou extends React.Component {
     <SafeAreaView>
       <Header style={{alignItems:'center', backgroundColor:'#03a678'}}><Text style={styles.header}>CHECKIN</Text></Header>
       <FlatList
-        data={rooms}
+        data={checkin}
         renderItem={({ item }) => AddFav(item , this.props.navigation)}
         numColumns={3}
         keyExtractor={item => item.title}
@@ -76,13 +77,13 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => {
   return {
-    roomsLocal: state.rooms,
+    checkinLocal: state.checkin,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleGetRooms:()=> dispatch(actionRooms.handleGetRooms())
+    handleCheckin:()=> dispatch(actionRooms.handleCheckin())
   }
 }
 

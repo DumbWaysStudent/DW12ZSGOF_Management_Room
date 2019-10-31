@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert, Image } from 'react-native';
-import { Container, Input, Item, Button, Icon } from 'native-base';
+import { Container, Input, Item, Button, Icon, Label } from 'native-base';
 import * as actionAkun from '../redux/actions/actionAkun'
 import { connect } from 'react-redux';
 

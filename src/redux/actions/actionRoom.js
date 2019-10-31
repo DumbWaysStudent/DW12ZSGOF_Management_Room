@@ -21,3 +21,9 @@ export const handleAddRooms = (name) => ({
       },
     }),
   });
+
+  export const handleCheckin = () => ({
+    type: types.CHECKIN,
+    payload: axios.get('http://192.168.0.45:9876/api/v2/checkin')
+}
+);

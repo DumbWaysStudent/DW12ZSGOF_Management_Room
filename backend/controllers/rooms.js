@@ -1,15 +1,15 @@
 const models = require('../models')
 const Room = models.room
-
+const Order = models.order
 
 exports.index = (req, res) => {
     Room.findAll().then(result=>res.send(result))
 }
 
 exports.listorder = (req, res) => {
-    Order.findAll({include: [{
-        model: order,
-        as: "room_id"
+    Room.findAll({include: [{
+        model: Order,
+        as: "order"
     }]}).then(result=>res.send(result))
 }
 

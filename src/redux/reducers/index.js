@@ -13,6 +13,7 @@ import reducerRooms from '../reducers/reducerRooms';
 import reducerCustomers from '../reducers/reducerCustomers';
 import reducerAddRoom from '../reducers/reducerAddRoom'
 import reducerAddCustomer from '../reducers/reducerAddCustomer'
+import reducerCheckin from '../reducers/reducerCheckin'
 
 
 
@@ -29,7 +30,8 @@ const appReducer = combineReducers({
   rooms: reducerRooms,
   customers: reducerCustomers,
   addRoom : reducerAddRoom,
-  addCustomer : reducerAddCustomer
+  addCustomer : reducerAddCustomer,
+  checkin : reducerCheckin
 })
 
 export default appReducer
