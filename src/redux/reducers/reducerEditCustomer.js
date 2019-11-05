@@ -2,26 +2,24 @@ import * as types from '../types'
 
 const initialState = {
   isError:false,
-  isSuccess:false,
-  updateWebtoon: [],
+  editCustomer: [],
 };
 
-export default function reducerUpdateWebtoon(state = initialState, action) {
+export default function reducerEditCustomer(state = initialState, action) {
   console.log(action.payload)
   switch (action.type) {
-    case `${types.GET_UPDATE_WEBTOON}_PENDING`:
+    case `${types.EDIT_CUSTOMER}_PENDING`:
         return {
           ...state,
         };
   
-      case `${types.GET_UPDATE_WEBTOON}_FULFILLED`:
+      case `${types.EDIT_CUSTOMER}_FULFILLED`:
         return {
           ...state,
-          isSuccess:true,
-          updateWebtoon: action.payload.data
+          editCustomer: action.payload.data
         };
   
-      case `${types.GET_UPDATE_WEBTOON}_REJECTED`:
+      case `${types.EDIT_CUSTOMER}_REJECTED`:
         return {
           ...state,
           isError:true

@@ -19,7 +19,7 @@ export default function reducerCustomers(state = initialState, action) {
           customers: action.payload.data
         };
   
-      case `${types.CUSTOMERS}_REJECTED`:
+      case `${types.GET_CUSTOMERS}_REJECTED`:
         return {
           ...state,
           isError:true

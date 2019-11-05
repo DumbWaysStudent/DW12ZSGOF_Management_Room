@@ -1,9 +1,10 @@
 import * as types from '../types'
 import axios from 'axios'
+import {ipUrl} from '../../component/url'
 
 export const handleGetCustomers = () => ({
     type: types.GET_CUSTOMERS,
-    payload: axios.get('http://192.168.0.45:9876/api/v2/customers')
+    payload: axios.get(`${ipUrl}/customers`)
 }
 );
 
@@ -17,12 +18,38 @@ export const handleAddCustomers = (
     type: types.ADD_CUSTOMER,
     payload: axios({
       method: 'POST',
-      url: `http://192.168.0.45:9876/api/v2/customer`,
-      headers: {
-        'Content-Type': 'application/json',
-        // Authorization: `Bearer ${token}`,
-      },
+      url: `${ipUrl}/customer`,
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   // Authorization: `Bearer ${token}`,
+      // },
       data: {
+        name,
+        identity_number,
+        phone_number,
+        image,
+      },
+    }),
+  });
+
+  export const handleEditCustomer = (
+    id,
+    name,
+    identity_number,
+    phone_number,
+    image,
+    // token,
+  ) => ({
+    type: types.EDIT_CUSTOMER,
+    payload: axios({
+      method: 'PUT',
+      url: `${ipUrl}/customer/${id}`,
+      // headers: {
+      //   // 'Content-Type': 'application/json',
+      //   // Authorization: `Bearer ${token}`,
+      // },
+      data: {
+        id,
         name,
         identity_number,
         phone_number,

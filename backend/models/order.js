@@ -9,7 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     is_done: DataTypes.BOOLEAN
   }, {});
   order.associate = function(models) {
-    // associations can be defined here
+    order.belongsTo(models.customer, {
+      as: 'customer',
+      foreignKey: 'customer_id',
+    });
   };
   return order;
 };

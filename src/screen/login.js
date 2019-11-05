@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, Image, StatusBar } from 'react-native';
 import { Container, Input, Item, Button, Icon, Label } from 'native-base';
 import * as actionAkun from '../redux/actions/actionAkun'
 import { connect } from 'react-redux';
@@ -45,6 +45,7 @@ class LoginScreen extends React.Component {
     return (
       <Container style={{backgroundColor:''}}>
         <View style={styles.content}>
+        <StatusBar backgroundColor="#00b16a" barStyle="default-content" />
           <View style={styles.title}>
           <Image
             style={{width: 100,height: 100,}}

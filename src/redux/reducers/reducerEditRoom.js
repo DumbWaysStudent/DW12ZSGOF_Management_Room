@@ -2,26 +2,24 @@ import * as types from '../types'
 
 const initialState = {
   isError:false,
-  isSuccess:false,
-  myCreation: [],
+  editRoom: [],
 };
 
-export default function reducerMyCreation(state = initialState, action) {
+export default function reducerEditRoom(state = initialState, action) {
   console.log(action.payload)
   switch (action.type) {
-    case `${types.GET_MY_CREATION}_PENDING`:
+    case `${types.EDIT_ROOM}_PENDING`:
         return {
           ...state,
         };
   
-      case `${types.GET_MY_CREATION}_FULFILLED`:
+      case `${types.EDIT_ROOM}_FULFILLED`:
         return {
           ...state,
-          isSuccess:true,
-          myCreation: action.payload.data
+          editRoom: action.payload.data
         };
   
-      case `${types.GET_MY_CREATION}_REJECTED`:
+      case `${types.EDIT_ROOM}_REJECTED`:
         return {
           ...state,
           isError:true

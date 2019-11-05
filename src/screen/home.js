@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, StatusBar} from 'react-native';
 import {Icon} from 'native-base';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import  Checkin from './checkin';
@@ -15,7 +15,8 @@ export default createMaterialBottomTabNavigator(
         navigationOptions:{  
           tabBarLabel:'Checkin',  
           tabBarIcon: ({ tintColor }) => (  
-              <View>  
+              <View>
+                  <StatusBar backgroundColor="#26c281" barStyle="ligh-content" />  
                   <Icon style={[{color: tintColor}]} size={10} name={'md-checkbox-outline'}/>  
               </View>) 
         }  

@@ -4,4 +4,7 @@ export const GET_CUSTOMERS = 'GET_CUSTOMERS'
 export const ADD_CUSTOMER = 'ADD_CUSTOMER'
 export const ADD_ROOM = 'ADD_ROOM'
 export const CHECKIN = 'CHECKIN'
+export const EDIT_ROOM = 'EDIT_ROOM'
+export const EDIT_CUSTOMER = 'EDIT_CUSTOMER'
+export const ADD_CHECKIN = 'ADD_CHECKIN'
 

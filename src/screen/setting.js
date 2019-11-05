@@ -12,24 +12,23 @@ class Setting extends React.Component {
     const dataLogin = this.props.loginLocal.login
     console.disableYellowBox=true;
     return (
-      <Container style={{backgroundColor:''}}>
-        <Header style={{alignItems:'center', backgroundColor:'white'}}><Text style={styles.header}>SETTING</Text></Header>
+      <Container>
+      
+        <View style={{backgroundColor:'#3fc380', height:200}}>
+
+        </View>
         <View style={styles.content}>
                 <View style={styles.User}>
-                  <Icon name='contact' style={{fontSize:100, color:'#3fc380'}}></Icon>
+                <View style={{flex:10, justifyContent:'center'}}>
+                  <Icon name='contact' style={{fontSize:100, color:'grey'}}></Icon>
                   <Text style={styles.YourName}>{dataLogin.user.username}</Text>
-                </View>  
-            <View>        
-            <Card>
-              <CardItem>
-                <Body style={{alignItems:'center'}}>
-                  <View style={styles.menu2}>
-                  <Text onPress={() => this.props.navigation.navigate('Login')} style={styles.Text}>Log Out</Text>
-                  </View>
-              </Body>
-            </CardItem>
-            </Card>
-          </View>
+                </View>
+                <View style={{flex:1}}>
+                <Button style={{backgroundColor:'#3fc380', borderRadius:7}} onPress={() => this.props.navigation.navigate('Login')}>
+                  <Text>Log Out</Text>
+                </Button>  
+                </View> 
+                </View> 
         </View>
       </Container>
     );
@@ -52,11 +51,18 @@ const styles = StyleSheet.create({
   },
   User: {
     alignItems: 'center',
-    margin: 10,
-    paddingBottom: 50
+    marginTop:-130 ,
+    marginHorizontal:50,
+    paddingBottom: 50,
+    backgroundColor:'white',
+    height:300,
+    justifyContent:'center',
+    borderRadius:15
   },
   YourName : {
     fontSize: 25,
+    color:'grey',
+    alignSelf:'center'
   },
   Text : {
     color: 'black',
