@@ -32,7 +32,7 @@ app.group("/api/v2", (router) => {
     //CheckIn/CheckOut API
     router.get('/checkin', RoomController.listorder)  //Checkin
     router.post('/checkin', OrderController.store) //Addcheckin
-    router.put('/order/:id', OrderController.update) //checkout
+    router.delete('/order/:id', OrderController.delete) //checkout
 })
 
 app.listen(process.env.PORT || 9876, function(){ 
